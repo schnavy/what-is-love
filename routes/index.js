@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
   let texte = JSON.parse(rawdata);
   console.log(texte);
   res.render('index', {
-    title: 'What is love?',
+    title: 'Instagram reflects on love',
     texte: texte
   });
 });

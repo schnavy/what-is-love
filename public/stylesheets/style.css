@@ -1,12 +1,48 @@
+@font-face {
+  font-family: 'William';
+  src: url('../fonts/William/9fc2418fac987960-subsetofWilliamTextPro-Reg.woff2') format('woff2'),
+      url('../fonts/William/9fc2418fac987960-subsetofWilliamTextPro-Reg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'William';
+  src: url('../fonts/William/ef09cfef922114cf-subsetofWilliamTextPro-RegIta.woff2') format('woff2'),
+      url('../fonts/William/ef09cfef922114cf-subsetofWilliamTextPro-RegIta.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 *{
   margin: 5px;
   padding: 0;
   box-sizing: border-box;
 }
 body {
+  font-family: 'William';
+  text-align: center;
+  padding-top: 20px;
+  background-color: aliceblue;
+}
+
+h1{
+  font-style: normal;
+  font-size: 1.5em;
+}
+p {
+  margin-bottom: 20px;
+  font-style: italic;
 
 }
 
-p {
-  margin-bottom: 20px;
+
+.poem{
+  font-size: 2em;
+  font-style: italic;
+  position: absolute;
+  width: 100vw;
+  margin-top: 40vh;
 }
