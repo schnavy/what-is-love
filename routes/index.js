@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
     let img = data.url;
 
     res.render('index', {
-      title: 'Instagram reflects on love  ',
+      title: 'Instagram reflecting on love  ',
       text: text,
       imgs: img
     });

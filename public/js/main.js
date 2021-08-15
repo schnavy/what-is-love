@@ -51,7 +51,7 @@ setInterval(() => {
     imageElements[r].src = "/proxy?url=" + editedData.url[r]
     content.appendChild(imageElements[r]);
 
-}, 800);
+}, 200);
 
 
 let title = document.querySelector("#title")
@@ -79,7 +79,7 @@ document.addEventListener("mousemove", (e) => {
         })
         curr.style.display = "block"
         curr.style.left = e.x + "px"
-        curr.style.top = e.y + "px"
+        curr.style.top = window.scrollY + e.y + "px"
         // moveImg(curr, e.x, e.y)
     } else {
         // hideImg(hoverimgs)
