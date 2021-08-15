@@ -82,9 +82,12 @@ body {
 }
 
 #hoverimg{
+  display: none;
   width: 100px;
   height:100px;
   position: absolute;
   transform: translate(-50%, -50%);
   background-color: grey;
+  pointer-events: none;
+  cursor: none;
 }

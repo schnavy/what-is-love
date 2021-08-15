@@ -13,7 +13,6 @@ router.get('/', function (req, res, next) {
     let data = JSON.parse(rawdata);
     let text = data.alt;
     let img = data.url;
-    console.log(data);
 
     res.render('index', {
       title: 'Instagram reflects on love  ',

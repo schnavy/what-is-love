@@ -1,4 +1,3 @@
-// console.log(alttexte)
 let content = document.querySelector("#col2")
 let r = 0
 let editedData = {
@@ -15,6 +14,7 @@ for (let i = 0; i < texte.length; i++) {
 
 }
 
+
 let textElements = []
 
 
@@ -22,7 +22,7 @@ for (i = 0; i < editedData.alt.length; i++) {
 
     textElements[i] = createNeuesElement(
         "p",
-        "p" + i,
+        i,
         "poem"
     )
     textElements[i].textContent = editedData.alt[i]
@@ -35,7 +35,7 @@ setInterval(() => {
     // let old = document.querySelector(".poem")
     r = Math.floor(Math.random() * editedData.alt.length)
     content.prepend(textElements[r]);
-}, 800);
+}, 1500);
 
 
 let title = document.querySelector("#title")
@@ -52,8 +52,19 @@ title.addEventListener("mouseleave", (e) => {
 })
 
 document.addEventListener("mousemove", (e) => {
+    if (e.target.className == "poem") {
+        moveImg(e.x, e.y)
+    } else {
+        hideImg()
+    }
 
-    showImg(e.x, e.y)
+})
+
+
+textElements.forEach((elem) => {
+    elem.addEventListener("mouseenter", (e) => {
+        changeImg(e.target.id)
+    })
 })
 
 function createNeuesElement(type, id, klasse) {
@@ -74,9 +85,19 @@ function toggleInfos(action) {
 
 
 
-function showImg(mouseX, mouseY) {
+function moveImg(mouseX, mouseY) {
+    hoverimg.style.display = "block"
     hoverimg.style.left = mouseX + "px"
     hoverimg.style.top = mouseY + "px"
-    hoverimg.src = editedData.url[100]
-    console.log(editedData.url[100]);
+
+
+}
+
+function hideImg() {
+    hoverimg.style.display = "none"
+}
+
+function changeImg(id) {
+    hoverimg.src = "/proxy?url=" + editedData.url[id]
+    console.log(hoverimg.src);
 }
