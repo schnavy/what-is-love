@@ -4,14 +4,30 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script>
-          let texte = <%-JSON.stringify(texte) %>
-          let alttexte = texte.alttexte
+          let texte = <%-JSON.stringify(text) %>
+          let imgurls = <%-JSON.stringify(imgs) %>
+  
+
 
     </script>
   </head>
   <body>
-    <h1>What is Love?</h1>
-    <p>According to Instagrams Image Recognition</p>
+    <div id="col1" class="col">
+    <p id="title">What is Love?*</p>
+    <div class="info">
+    <p class="footnote"><i>*According to Instagrams automated Image Recognition</i></p>
+    <br>
+    <p class="infotext">Every picture posted to Facebook and Instagram gets evaluated by an image analysis AI in order to create a caption, and that AI just got a lot smarter. The improved system should be a treat for visually impaired users, and may help you find your photos faster in the future.
+  <br>
+Alt text is a field in an image’s metadata that describes its contents: “A person standing in a field with a horse,” or “a dog on a boat.” This lets the image be understood by people who can’t see it.
+<br><br>
+These descriptions are often added manually by a photographer or publication, but people uploading photos to social media generally don’t bother, if they even have the option. So the relatively recent ability to automatically generate one — the technology has only just gotten good enough in the last couple years — has been extremely helpful in making social media more accessible in general.</p>
+    </div>
+    </div>
+    <div id="col2" class="col">
+
+    </div>
+    <img id="hoverimg" src="" alt="">
   </body>
   <footer>
   <script src="/js/main.js"></script>
