@@ -51,7 +51,7 @@ setInterval(() => {
     imageElements[r].src = "/proxy?url=" + editedData.url[r]
     content.appendChild(imageElements[r]);
 
-}, 200);
+}, 800);
 
 
 let title = document.querySelector("#title")
