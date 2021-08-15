@@ -3,15 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// const proxy = require('pass-cors')
 
 
 
 var indexRouter = require('./routes/index');
+var proxyRouter = require('./routes/proxy');
 
 var app = express();
 
 
-const proxy = require('pass-cors')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +26,8 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/proxy', proxy);  //You can customise the route name
+  app.use('/proxy', proxyRouter);  //You can customise the route name
+  
 app.use('/', indexRouter);
 
 

@@ -6,7 +6,7 @@ let editedData = {
 }
 
 for (let i = 0; i < texte.length; i++) {
-    if (texte[i].includes("May") && !texte[i].includes("text")) {
+    if (texte[i].includes("May be")) {
         let string = texte[i].substring(texte[i].indexOf('May')).replace("an image of ", "");
         editedData.alt.push(string)
         editedData.url.push(imgurls[i])
@@ -16,7 +16,7 @@ for (let i = 0; i < texte.length; i++) {
 
 
 let textElements = []
-
+let imageElements = []
 
 for (i = 0; i < editedData.alt.length; i++) {
 
@@ -28,17 +28,34 @@ for (i = 0; i < editedData.alt.length; i++) {
     textElements[i].textContent = editedData.alt[i]
     // content.appendChild(textElements[i]);
     // console.log(textElements[i]);
+    imageElements[i] = createNeuesElement(
+        "img",
+        "img"+i,
+        "hoverimg"
+    )
+
 
 }
 
 setInterval(() => {
     // let old = document.querySelector(".poem")
     r = Math.floor(Math.random() * editedData.alt.length)
+    let allCurr = document.querySelectorAll("poem")
+    allCurr.forEach((e)=>{
+        if (e.id == r) {
+            console.log(dopplung);
+            return
+        }
+    })
     content.prepend(textElements[r]);
-}, 1500);
+    imageElements[r].src = "/proxy?url=" + editedData.url[r]
+    content.appendChild(imageElements[r]);
+
+}, 800);
 
 
 let title = document.querySelector("#title")
+let col1 = document.querySelector("#col1")
 let col2 = document.querySelector("#col2")
 let hoverimg = document.querySelector("#hoverimg");
 
@@ -52,10 +69,20 @@ title.addEventListener("mouseleave", (e) => {
 })
 
 document.addEventListener("mousemove", (e) => {
+    let hoverimgs = document.querySelectorAll(".hoverimg")
     if (e.target.className == "poem") {
-        moveImg(e.x, e.y)
+        let curr = document.querySelector("#img"+e.target.id)
+
+        
+        hoverimgs.forEach((e) => {
+            // e.style.display = "none"
+        })
+        curr.style.display = "block"
+        curr.style.left = e.x + "px"
+        curr.style.top = e.y + "px"
+        // moveImg(curr, e.x, e.y)
     } else {
-        hideImg()
+        // hideImg(hoverimgs)
     }
 
 })
@@ -63,7 +90,7 @@ document.addEventListener("mousemove", (e) => {
 
 textElements.forEach((elem) => {
     elem.addEventListener("mouseenter", (e) => {
-        changeImg(e.target.id)
+        // changeImg(e.target.id)
     })
 })
 
@@ -85,19 +112,19 @@ function toggleInfos(action) {
 
 
 
-function moveImg(mouseX, mouseY) {
-    hoverimg.style.display = "block"
-    hoverimg.style.left = mouseX + "px"
-    hoverimg.style.top = mouseY + "px"
+function moveImg(curr, mouseX, mouseY) {
+    curr.style.display = "block"
+    curr.style.left = mouseX + "px"
+    curr.style.top = mouseY + "px"
 
 
 }
 
-function hideImg() {
-    hoverimg.style.display = "none"
-}
+function hideImg(hoverimgs) {
+    hoverimgs.forEach((e) => {
+        e.style.display = "none"
+    })}
 
 function changeImg(id) {
     hoverimg.src = "/proxy?url=" + editedData.url[id]
-    console.log(hoverimg.src);
 }
