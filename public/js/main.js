@@ -50,6 +50,9 @@ setInterval(() => {
     content.prepend(textElements[r]);
     imageElements[r].src = "/proxy?url=" + editedData.url[r]
     content.appendChild(imageElements[r]);
+    imageElements.forEach((e)=>{
+        e.style.top = parseInt(e.style.top.replace("px", "")) + 33 + "px" 
+    })
 
 }, 800);
 
