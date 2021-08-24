@@ -25,11 +25,12 @@ app.use(express.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+console.log(path.join(__dirname, 'public'));
 
-  app.use('/proxy', proxyRouter);  //You can customise the route name
-  
+
 app.use('/', indexRouter);
 
+app.use('/proxy', proxyRouter);  //You can customise the route name
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
