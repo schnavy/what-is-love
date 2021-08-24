@@ -54,7 +54,7 @@ setInterval(() => {
         e.style.top = parseInt(e.style.top.replace("px", "")) + 33 + "px" 
     })
 
-}, 800);
+}, 1000);
 
 
 let title = document.querySelector("#title")
