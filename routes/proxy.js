@@ -2,6 +2,9 @@ const request = require('request');
 var express = require('express');
 var router = express.Router();
 const fs = require('fs')
+var path = require('path');
+
+
 
 function makeid(length) {
     var result           = '';
@@ -33,10 +36,10 @@ router.get('/', async (req, res) => {
             url = new URL(uri)
             var ext = url.pathname.split('.')
             filename=`\\${makeid(10)}.${ext[ext.length - 1]}`
-            request(uri).pipe(fs.createWriteStream(__dirname + filename)).on('close', ()=>{
-                res.sendFile(__dirname+filename,()=>{
-                    if(fs.existsSync(__dirname+filename)){
-                    fs.unlinkSync(__dirname+filename)
+            request(uri).pipe(fs.createWriteStream(path.join(__dirname, 'public') + filename)).on('close', ()=>{
+                res.sendFile(path.join(__dirname, 'public')+filename,()=>{
+                    if(fs.existsSync(path.join(__dirname, 'public')+filename)){
+                    fs.unlinkSync(path.join(__dirname, 'public')+filename)
                     }
                 })
             });

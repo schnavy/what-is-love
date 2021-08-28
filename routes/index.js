@@ -11,13 +11,10 @@ router.get('/', function (req, res, next) {
 
     let rawdata = fs.readFileSync('poems.json');
     let data = JSON.parse(rawdata);
-    let text = data.alt;
-    let img = data.url;
 
     res.render('index', {
       title: 'Instagram reflecting on love  ',
-      text: text,
-      imgs: img
+      text: data,
     });
   } catch (error) {
     console.log(e);
