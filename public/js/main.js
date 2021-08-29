@@ -1,7 +1,7 @@
 let content = document.querySelector("#col1");
 
 let editedAlts = [];
-let index = 0
+let index = 0;
 console.log(texte);
 
 for (let i = 0; i < texte.length; i++) {
@@ -19,37 +19,32 @@ for (i = 0; i < editedAlts.length; i++) {
 	textElements[i] = createNeuesElement("p", i, "poem");
 	textElements[i].textContent = editedAlts[i];
 }
-newLine()
+newLine();
 setInterval(() => {
-    newLine()
-
+	newLine();
 }, 3000);
 
-// setInterval(() => {
-//         let hearts = createNeuesElement("p", "", "poem");
-//         hearts.textContent = "<333"
-//         hearts.classList.add("visible");
-//         content.prepend(hearts);
-//         let hearts2 = createNeuesElement("p", "", "poem");
-//         hearts2.textContent = "<     __?"
-//         hearts2.classList.add("visible");
-//         content.prepend(hearts2);
-// }, 6000);
+let artefacts = [" <333", ".       __?", "..", "?!", "*", "<3"];
 
+setInterval(() => {
+	let r = Math.floor(Math.random() * editedAlts.length);
+	let r2 = Math.floor(Math.random() * artefacts.length);
+	textElements[r].textContent += artefacts[r2];
+}, 100000);
 
 function newLine() {
-    	// let old = document.querySelector(".poem")
+	// let old = document.querySelector(".poem")
 	r = Math.floor(Math.random() * editedAlts.length);
-    let curr = textElements[r]
+	let curr = textElements[r];
 	content.prepend(curr);
 	setTimeout(() => {
-        curr.classList.add("visible");
+		curr.classList.add("visible");
 	}, 200);
-    index++
-    if (index > 100) {
-        index = 0
-    }
-    console.log(r);
+	index++;
+	if (index > 100) {
+		index = 0;
+	}
+	console.log(r);
 }
 
 let title = document.querySelector("#title");
@@ -87,12 +82,6 @@ textElements.forEach((elem) => {
 		// changeImg(e.target.id)
 	});
 });
-
-
-
-
-
-
 
 function createNeuesElement(type, id, klasse) {
 	let elem = document.createElement(type);

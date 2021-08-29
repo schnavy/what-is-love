@@ -47,7 +47,7 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-let scraper = false;
+let scraper = true;
 
 if (scraper) {
 	scrapeAlts();
