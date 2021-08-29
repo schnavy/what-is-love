@@ -32,7 +32,7 @@
 }
 
 body {
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: 'HydrogenType';
   /* text-align: center; */
   /* padding-top: 20px; */
@@ -46,18 +46,10 @@ body {
   color: rgb(255, 0, 0);
 
 }
-/* 
-@media (max-width: 1200px) {
-  body {
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content auto;
-
-  }
-} */
 
 a {
-  color: blue;
-  text-decoration: none;
+  color: red;
+  text-decoration: underline;
 }
 
 p {
@@ -66,12 +58,9 @@ p {
 
 #title {
   cursor: pointer;
-  /* position: absolute; */
   font-style: normal;
-  /* font-size: 1.5em; */
   text-shadow: 0px 0px 3px rgb(235, 0, 0);
   transition: all 100ms ease-in-out;
-  /* display: none; */
 }
 
 #title:hover {
@@ -80,10 +69,19 @@ p {
 
 .info {
   display: none;
-  width: 90%;
+  font-size: .8em;
   text-shadow: 0px 0px 4px rgb(220, 0, 0);
+}
 
+@media(max-width: 768px) {
+  .heart{
+    display: none;
+  }
+  .info {
+    display: block;
+    font-size: .5em;
 
+  }
 }
 
 .col {
@@ -157,5 +155,5 @@ p {
   background-size: 100vw 100vh;
   /* opacity: ; */
   mix-blend-mode: overlay;
-  background-image: url("https://c.tenor.com/5RQm0t8EzrMAAAAC/love-you-hearts.gif");
+  background-image: url("../images/love-you-hearts.gif");
 }

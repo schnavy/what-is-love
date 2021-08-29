@@ -47,7 +47,7 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-let scraper = true;
+let scraper = false;
 
 if (scraper) {
 	scrapeAlts();
@@ -86,7 +86,7 @@ if (scraper) {
 				}
 			});
 			console.log(oldArray);
-			oldArray.length = 100;
+			oldArray.length = 300;
 
 			var jsonContent = JSON.stringify(oldArray);
 			console.log(jsonContent);

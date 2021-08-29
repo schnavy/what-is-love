@@ -3,3 +3,6 @@ build
 npm-debug.log
 .env
 .DS_Store
+poems.json
+poems_alt.json
+public/audio

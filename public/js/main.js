@@ -1,3 +1,28 @@
+// let audiofiles = [
+// 	"1gZqSLy0DB7z.128.mp3",
+// 	"1RdXo0U49SrX.128.mp3",
+// 	"MqbvwzoMBLpU.128.mp3",
+// 	"Rkv86kYqZiXn.128.mp3",
+// 	"szMUJCbEK9Q0.128.mp3",
+// 	"ZuWdLHTBlxuM.128.mp3",
+// ];
+
+// let audio = new Audio("audio/Rkv86kYqZiXn.128.mp3");
+
+// document.addEventListener("click", (e) => {
+// 	if (!audio.paused) {
+// 		audio.pause();
+// 	} else {
+// 		audio.play();
+// 	}
+// });
+
+// function playAudio() {
+// 	let r = Math.floor(Math.random() * audios.length);
+// 	audios[r].play();
+// 	return audios[r];
+// }
+
 let content = document.querySelector("#col1");
 
 let editedAlts = [];
@@ -5,7 +30,7 @@ let index = 0;
 console.log(texte);
 
 for (let i = 0; i < texte.length; i++) {
-	if (texte[i].includes("May be")) {
+	if (typeof texte[i] == "string" && texte[i].includes("May be")) {
 		let string = texte[i]
 			.substring(texte[i].indexOf("May"))
 			.replace("an image of ", "");
@@ -24,7 +49,7 @@ setInterval(() => {
 	newLine();
 }, 3000);
 
-let artefacts = [" <333", ".       __?", "..", "?!", "*", "<3"];
+let artefacts = [" <3", "(?)", "..", "?!", "*"];
 
 setInterval(() => {
 	let r = Math.floor(Math.random() * editedAlts.length);
@@ -39,7 +64,7 @@ function newLine() {
 	content.prepend(curr);
 	setTimeout(() => {
 		curr.classList.add("visible");
-	}, 200);
+	}, 300);
 	index++;
 	if (index > 100) {
 		index = 0;
@@ -60,29 +85,6 @@ title.addEventListener("mouseleave", (e) => {
 	toggleInfos("hide");
 });
 
-// document.addEventListener("mousemove", (e) => {
-// 	let hoverimgs = document.querySelectorAll(".hoverimg");
-// 	if (e.target.className == "poem") {
-// 		let curr = document.querySelector("#img" + e.target.id);
-
-// 		hoverimgs.forEach((e) => {
-// 			// e.style.display = "none"
-// 		});
-// 		curr.style.display = "block";
-// 		curr.style.left = e.x + "px";
-// 		curr.style.top = window.scrollY + e.y + "px";
-// 		// moveImg(curr, e.x, e.y)
-// 	} else {
-// 		// hideImg(hoverimgs)
-// 	}
-// });
-
-textElements.forEach((elem) => {
-	elem.addEventListener("mouseenter", (e) => {
-		// changeImg(e.target.id)
-	});
-});
-
 function createNeuesElement(type, id, klasse) {
 	let elem = document.createElement(type);
 	elem.setAttribute("id", id);
@@ -97,20 +99,4 @@ function toggleInfos(action) {
 	} else {
 		infos.style.display = "none";
 	}
-}
-
-function moveImg(curr, mouseX, mouseY) {
-	curr.style.display = "block";
-	curr.style.left = mouseX + "px";
-	curr.style.top = mouseY + "px";
-}
-
-function hideImg(hoverimgs) {
-	hoverimgs.forEach((e) => {
-		e.style.display = "none";
-	});
-}
-
-function changeImg(id) {
-	hoverimg.src = "/proxy?url=" + editedData.url[id];
 }
