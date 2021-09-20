@@ -5,6 +5,10 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const request = require("request");
 const fs = require("fs");
+var config = {
+    "xRapidapiHost": "instagram40.p.rapidapi.com",
+    "xRapidapiKey" : "66b8aa8dafmsh5ea8017ee26afc8p1dd278jsned98e43dcb5b"
+}
 
 var indexRouter = require("./routes/index");
 var proxyRouter = require("./routes/proxy");
