@@ -6,3 +6,5 @@ npm-debug.log
 poems.json
 poems_alt.json
 public/audio
+
+config.js

@@ -58,8 +58,8 @@ if (scraper) {
 			url: "https://instagram40.p.rapidapi.com/tag",
 			qs: { tag: "love" },
 			headers: {
-				"x-rapidapi-host": "instagram40.p.rapidapi.com",
-				"x-rapidapi-key": "66b8aa8dafmsh5ea8017ee26afc8p1dd278jsned98e43dcb5b",
+				"x-rapidapi-host": config.xRapidapiHost,
+				"x-rapidapi-key": config.xRapidapiKey,
 				useQueryString: true,
 			},
 		};
