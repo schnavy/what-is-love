@@ -152,6 +152,7 @@ p {
   bottom: 0;
   z-index: -100;
   background-size: 100vw 100vh;
+  min-height: 100vh;
   /* opacity: ; */
   mix-blend-mode: overlay;
   background-image: url("../images/love-you-hearts.gif");

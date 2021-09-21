@@ -7,15 +7,17 @@
 
     <script>
           let texte = <%-JSON.stringify(text) %>
+          let isExhibitMode = <%-JSON.stringify(exhibitMode) %>
   
     </script>
   </head>
   <body>
     <div id="col1" class="col">    </div>
-
+    <%if(!exhibitMode){%>
     <div id="col2" class="col">
     <p id="title"><span class ="heart"><3? </span><span class="info"><i> What is #love? _ *According to Instagrams auto-generated alt-Tags</i> _ Ein Projekt von <a href="https://davidwahrenburg.de" target="_blank" rel="noopener noreferrer">David Wahrenburg</a></span></p>
     </div>
+    <%}%>
     </div>
     <div class="background"></div>
 
