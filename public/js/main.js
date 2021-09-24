@@ -7,15 +7,15 @@
 // 	"ZuWdLHTBlxuM.128.mp3",
 // ];
 
-// let audio = new Audio("audio/Rkv86kYqZiXn.128.mp3");
+let audio = document.querySelector("audio")
 
-// document.addEventListener("click", (e) => {
-// 	if (!audio.paused) {
-// 		audio.pause();
-// 	} else {
-// 		audio.play();
-// 	}
-// });
+document.addEventListener("click", (e) => {
+	if (!audio.paused) {
+		audio.pause();
+	} else {
+		audio.play();
+	}
+});
 
 // function playAudio() {
 // 	let r = Math.floor(Math.random() * audios.length);
@@ -27,16 +27,16 @@ let content = document.querySelector("#col1");
 
 let editedAlts = [];
 let index = 0;
-console.log(texte);
 
-for (let i = 0; i < texte.length; i++) {
+for (let i = 0; i < 200; i++) {
 	if (typeof texte[i] == "string" && texte[i].includes("May be")) {
 		let string = texte[i]
-			.substring(texte[i].indexOf("May"))
-			.replace("an image of ", "");
+		.substring(texte[i].indexOf("May"))
+		.replace("an image of ", "");
 		editedAlts.push(string);
 	}
 }
+console.log(editedAlts);
 
 let textElements = [];
 
@@ -47,7 +47,7 @@ for (i = 0; i < editedAlts.length; i++) {
 newLine();
 setInterval(() => {
 	newLine();
-}, 3000);
+}, 4000);
 
 let artefacts = [" <3", "(?)", "..", "?!", "*"];
 
