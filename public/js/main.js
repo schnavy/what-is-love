@@ -16,6 +16,13 @@ document.addEventListener("click", (e) => {
 		audio.play();
 	}
 });
+document.addEventListener("touchend", (e) => {
+	if (!audio.paused) {
+		audio.pause();
+	} else {
+		audio.play();
+	}
+});
 
 // function playAudio() {
 // 	let r = Math.floor(Math.random() * audios.length);
