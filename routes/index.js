@@ -3,8 +3,6 @@ var router = express.Router();
 
 const fs = require('fs');
 
-
-
 /* GET home page. */
 router.get('/', function (req, res, next) {
   try {
@@ -36,6 +34,5 @@ router.get('/exhibit', function (req, res, next) {
     console.log(e);
   }
 });
-
 
 module.exports = router;

@@ -24,11 +24,6 @@ document.addEventListener("touchend", (e) => {
 	}
 });
 
-// function playAudio() {
-// 	let r = Math.floor(Math.random() * audios.length);
-// 	audios[r].play();
-// 	return audios[r];
-// }
 
 let content = document.querySelector("#col1");
 
