@@ -2,7 +2,7 @@
 
 Scraping Instagrams auto-generated descriptive Alt-Texts in order find the essence of love.
 
-Archived static Version: https://love.davidwahrenburg.de/
+Archived static Version: [love.davidwahrenburg.de](https://love.davidwahrenburg.de/)
 Last scraping 26/09/2021
 
 ![06_edit](https://github.com/user-attachments/assets/184b7842-21cc-49e1-8f4e-c0c6e064a1c8)
